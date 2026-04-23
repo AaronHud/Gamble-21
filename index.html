@@ -2,36 +2,32 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Blackjack Casino</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casino Royale</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
     <div id="game-container">
-        <h1>Blackjack 21</h1>
+        <nav id="hotbar">
+            <button onclick="switchGame('blackjack')">Blackjack</button>
+            <button onclick="switchGame('roulette')">Roulette</button>
+            <button onclick="switchGame('slots')">Slots</button>
+        </nav>
+
         <div id="wallet">Balance: $<span id="balance">1000</span></div>
-        
-        <div id="betting-area">
-            <label>Place your bet:</label><br>
-            <input type="number" id="bet-amount" value="10" min="1">
-            <button onclick="placeBet()">Deal</button>
+
+        <div id="main-game-area">
+            <h2>Welcome to the Casino!</h2>
+            <p>Select a game above to start playing.</p>
         </div>
 
-        <div id="game-table" style="display:none;">
-            <div id="dealer-area">
-                <h3>Dealer</h3>
-                <div id="dealer-hand" class="hand-container"></div>
-            </div>
-            <div id="player-area">
-                <h3>Player</h3>
-                <div id="player-hand" class="hand-container"></div>
-            </div>
-            <div id="controls">
-                <button onclick="hit()">Hit</button>
-                <button onclick="stand()">Stand</button>
-            </div>
+        <div id="history-section">
+            <h3>Recent Activity</h3>
+            <ul id="history-log"></ul>
         </div>
-        <p id="message"></p>
     </div>
+
     <script src="script.js"></script>
 </body>
 </html>
